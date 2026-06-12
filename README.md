@@ -114,14 +114,4 @@ PowerBI project/
 |-- Customer_Churn_Analytics.SemanticModel/
 `-- PROJECT_BUILD_CHECKLIST.md
 
-## Tools and Skills Demonstrated
 
-- Power BI Desktop
-- Power Query
-- Data cleaning and profiling
-- Star-schema modeling
-- DAX measures
-- KPI design
-- Drill-through, tooltips, slicers, and bookmarks
-- Customer segmentation
-- Business storytelling and recommendations
