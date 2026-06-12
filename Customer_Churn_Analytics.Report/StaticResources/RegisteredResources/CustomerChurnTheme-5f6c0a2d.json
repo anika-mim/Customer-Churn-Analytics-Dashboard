@@ -1,0 +1,49 @@
+{
+  "name": "CustomerChurnTheme-5f6c0a2d.json",
+  "dataColors": [
+    "#2A6F97",
+    "#D1495B",
+    "#3A8D7D",
+    "#E9A23B",
+    "#6C63A8",
+    "#7A8B99",
+    "#4D908E",
+    "#B56576"
+  ],
+  "good": "#2E8B57",
+  "neutral": "#E9A23B",
+  "bad": "#D1495B",
+  "maximum": "#D1495B",
+  "center": "#F2D06B",
+  "minimum": "#3A8D7D",
+  "null": "#CBD5E1",
+  "foreground": "#17324D",
+  "foregroundNeutralSecondary": "#5C7083",
+  "foregroundNeutralTertiary": "#7A8B99",
+  "background": "#FFFFFF",
+  "backgroundLight": "#EEF2F6",
+  "backgroundNeutral": "#F6F8FB",
+  "tableAccent": "#2A6F97",
+  "textClasses": {
+    "label": {
+      "fontFace": "Segoe UI",
+      "fontSize": 10,
+      "color": "#334155"
+    },
+    "title": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 12,
+      "color": "#17324D"
+    },
+    "callout": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 30,
+      "color": "#17324D"
+    },
+    "header": {
+      "fontFace": "Segoe UI Semibold",
+      "fontSize": 11,
+      "color": "#17324D"
+    }
+  }
+}

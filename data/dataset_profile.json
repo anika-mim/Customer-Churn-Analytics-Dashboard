@@ -1,0 +1,286 @@
+{
+  "dataAsOf": "2025-12-31",
+  "totalCustomers": 1500,
+  "activeCustomers": 1115,
+  "churnedCustomers": 385,
+  "churnRate": 0.25666666666666665,
+  "retentionRate": 0.7433333333333333,
+  "annualRevenueLost": 339078.48,
+  "highRiskActiveCustomers": 125,
+  "annualRevenueAtRisk": 105229.56,
+  "totalHistoricalRevenue": 2483830.72,
+  "monthlyRevenueRows": 33181,
+  "segmentAnalysis": {
+    "contractType": [
+      {
+        "segment": "Month-to-Month",
+        "customers": 799,
+        "churned": 261,
+        "churnRate": 0.32665832290362956,
+        "totalRevenue": 1300057.39
+      },
+      {
+        "segment": "One Year",
+        "customers": 452,
+        "churned": 85,
+        "churnRate": 0.18805309734513273,
+        "totalRevenue": 756205.25
+      },
+      {
+        "segment": "Two Year",
+        "customers": 249,
+        "churned": 39,
+        "churnRate": 0.1566265060240964,
+        "totalRevenue": 427568.08
+      }
+    ],
+    "subscriptionPlan": [
+      {
+        "segment": "Basic",
+        "customers": 502,
+        "churned": 160,
+        "churnRate": 0.3187250996015936,
+        "totalRevenue": 520285.88
+      },
+      {
+        "segment": "Premium",
+        "customers": 340,
+        "churned": 87,
+        "churnRate": 0.25588235294117645,
+        "totalRevenue": 833550.36
+      },
+      {
+        "segment": "Standard",
+        "customers": 658,
+        "churned": 138,
+        "churnRate": 0.20972644376899696,
+        "totalRevenue": 1129994.48
+      }
+    ],
+    "paymentMethod": [
+      {
+        "segment": "Electronic Check",
+        "customers": 411,
+        "churned": 153,
+        "churnRate": 0.3722627737226277,
+        "totalRevenue": 609955.39
+      },
+      {
+        "segment": "Mailed Check",
+        "customers": 238,
+        "churned": 59,
+        "churnRate": 0.24789915966386555,
+        "totalRevenue": 403982
+      },
+      {
+        "segment": "Bank Transfer",
+        "customers": 430,
+        "churned": 90,
+        "churnRate": 0.20930232558139536,
+        "totalRevenue": 726673.39
+      },
+      {
+        "segment": "Credit Card",
+        "customers": 421,
+        "churned": 83,
+        "churnRate": 0.19714964370546317,
+        "totalRevenue": 743219.94
+      }
+    ],
+    "ageGroup": [
+      {
+        "segment": "35-44",
+        "customers": 247,
+        "churned": 74,
+        "churnRate": 0.29959514170040485,
+        "totalRevenue": 416288.61
+      },
+      {
+        "segment": "25-34",
+        "customers": 221,
+        "churned": 61,
+        "churnRate": 0.27601809954751133,
+        "totalRevenue": 349348.04
+      },
+      {
+        "segment": "55-64",
+        "customers": 243,
+        "churned": 64,
+        "churnRate": 0.26337448559670784,
+        "totalRevenue": 385594.12
+      },
+      {
+        "segment": "45-54",
+        "customers": 255,
+        "churned": 65,
+        "churnRate": 0.2549019607843137,
+        "totalRevenue": 414779.14
+      },
+      {
+        "segment": "65+",
+        "customers": 382,
+        "churned": 87,
+        "churnRate": 0.22774869109947643,
+        "totalRevenue": 656885.19
+      },
+      {
+        "segment": "18-24",
+        "customers": 152,
+        "churned": 34,
+        "churnRate": 0.2236842105263158,
+        "totalRevenue": 260935.62
+      }
+    ],
+    "geography": [
+      {
+        "segment": "Northeast",
+        "customers": 341,
+        "churned": 91,
+        "churnRate": 0.2668621700879765,
+        "totalRevenue": 548976.03
+      },
+      {
+        "segment": "South",
+        "customers": 547,
+        "churned": 139,
+        "churnRate": 0.25411334552102377,
+        "totalRevenue": 908534.28
+      },
+      {
+        "segment": "West",
+        "customers": 307,
+        "churned": 78,
+        "churnRate": 0.254071661237785,
+        "totalRevenue": 519681.55
+      },
+      {
+        "segment": "Midwest",
+        "customers": 305,
+        "churned": 77,
+        "churnRate": 0.25245901639344265,
+        "totalRevenue": 506638.86
+      }
+    ],
+    "incomeLevel": [
+      {
+        "segment": "Low",
+        "customers": 420,
+        "churned": 114,
+        "churnRate": 0.2714285714285714,
+        "totalRevenue": 666874.58
+      },
+      {
+        "segment": "Middle",
+        "customers": 732,
+        "churned": 188,
+        "churnRate": 0.2568306010928962,
+        "totalRevenue": 1243532.9
+      },
+      {
+        "segment": "High",
+        "customers": 348,
+        "churned": 83,
+        "churnRate": 0.23850574712643677,
+        "totalRevenue": 573423.24
+      }
+    ]
+  },
+  "churnTrend": [
+    {
+      "month": "2024-01",
+      "churned": 5
+    },
+    {
+      "month": "2024-02",
+      "churned": 6
+    },
+    {
+      "month": "2024-03",
+      "churned": 11
+    },
+    {
+      "month": "2024-04",
+      "churned": 5
+    },
+    {
+      "month": "2024-05",
+      "churned": 9
+    },
+    {
+      "month": "2024-06",
+      "churned": 5
+    },
+    {
+      "month": "2024-07",
+      "churned": 14
+    },
+    {
+      "month": "2024-08",
+      "churned": 8
+    },
+    {
+      "month": "2024-09",
+      "churned": 9
+    },
+    {
+      "month": "2024-10",
+      "churned": 10
+    },
+    {
+      "month": "2024-11",
+      "churned": 9
+    },
+    {
+      "month": "2024-12",
+      "churned": 11
+    },
+    {
+      "month": "2025-01",
+      "churned": 13
+    },
+    {
+      "month": "2025-02",
+      "churned": 10
+    },
+    {
+      "month": "2025-03",
+      "churned": 15
+    },
+    {
+      "month": "2025-04",
+      "churned": 14
+    },
+    {
+      "month": "2025-05",
+      "churned": 11
+    },
+    {
+      "month": "2025-06",
+      "churned": 19
+    },
+    {
+      "month": "2025-07",
+      "churned": 18
+    },
+    {
+      "month": "2025-08",
+      "churned": 18
+    },
+    {
+      "month": "2025-09",
+      "churned": 22
+    },
+    {
+      "month": "2025-10",
+      "churned": 25
+    },
+    {
+      "month": "2025-11",
+      "churned": 22
+    },
+    {
+      "month": "2025-12",
+      "churned": 22
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+Date =
+ADDCOLUMNS (
+    CALENDAR ( DATE ( 2022, 1, 1 ), DATE ( 2025, 12, 31 ) ),
+    "Year", YEAR ( [Date] ),
+    "Quarter", "Q" & ROUNDUP ( MONTH ( [Date] ) / 3, 0 ),
+    "Month", FORMAT ( [Date], "MMM" ),
+    "Month No", MONTH ( [Date] ),
+    "Year Month", FORMAT ( [Date], "YYYY-MMM" ),
+    "Year Month Sort", YEAR ( [Date] ) * 100 + MONTH ( [Date] ),
+    "Month Start", DATE ( YEAR ( [Date] ), MONTH ( [Date] ), 1 )
+)
+
+// After creating the table:
+// 1. Mark Date[Date] as the date column.
+// 2. Sort Date[Month] by Date[Month No].
+// 3. Sort Date[Year Month] by Date[Year Month Sort].

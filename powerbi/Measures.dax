@@ -1,0 +1,115 @@
+// Create a blank table named Measures and store these measures in it.
+
+Total Customers =
+DISTINCTCOUNT ( Customers[CustomerID] )
+
+Active Customers =
+CALCULATE (
+    [Total Customers],
+    Customers[CustomerStatus] = "Active"
+)
+
+Churned Customers =
+CALCULATE (
+    [Total Customers],
+    Customers[CustomerStatus] = "Churned"
+)
+
+Churn Rate =
+DIVIDE ( [Churned Customers], [Total Customers], 0 )
+
+Retention Rate =
+DIVIDE ( [Active Customers], [Total Customers], 0 )
+
+Total Revenue =
+SUM ( 'Monthly Revenue'[MonthlyRevenue] )
+
+Monthly Recurring Revenue =
+CALCULATE (
+    SUM ( Customers[MonthlyCharges] ),
+    Customers[CustomerStatus] = "Active"
+)
+
+Revenue Lost =
+SUMX (
+    FILTER (
+        Customers,
+        Customers[CustomerStatus] = "Churned"
+    ),
+    Customers[MonthlyCharges] * 12
+)
+
+Average Customer Value =
+DIVIDE ( [Total Revenue], [Total Customers], 0 )
+
+Average Monthly Revenue per Customer =
+AVERAGEX (
+    VALUES ( Customers[CustomerID] ),
+    CALCULATE ( AVERAGE ( 'Monthly Revenue'[MonthlyRevenue] ) )
+)
+
+Average Customer Tenure =
+AVERAGE ( Customers[TenureMonths] )
+
+Customer Lifetime Value =
+[Average Monthly Revenue per Customer] * [Average Customer Tenure]
+
+Monthly Churned Customers =
+CALCULATE (
+    [Churned Customers],
+    USERELATIONSHIP ( 'Date'[Date], Customers[ChurnDate] )
+)
+
+Monthly Churn Rate =
+VAR PeriodStart =
+    MIN ( 'Date'[Date] )
+VAR CustomersAtStart =
+    CALCULATE (
+        DISTINCTCOUNT ( Customers[CustomerID] ),
+        REMOVEFILTERS ( 'Date' ),
+        FILTER (
+            Customers,
+            Customers[JoinDate] < PeriodStart
+                && (
+                    ISBLANK ( Customers[ChurnDate] )
+                    || Customers[ChurnDate] >= PeriodStart
+                )
+        )
+    )
+RETURN
+    DIVIDE ( [Monthly Churned Customers], CustomersAtStart, 0 )
+
+At-Risk Customers =
+CALCULATE (
+    [Total Customers],
+    Customers[CustomerStatus] = "Active",
+    Customers[RiskCategory] = "High Risk"
+)
+
+High-Risk Customer Rate =
+DIVIDE ( [At-Risk Customers], [Active Customers], 0 )
+
+Annual Active Revenue =
+SUMX (
+    FILTER (
+        Customers,
+        Customers[CustomerStatus] = "Active"
+    ),
+    Customers[MonthlyCharges] * 12
+)
+
+Revenue at Risk =
+SUMX (
+    FILTER (
+        Customers,
+        Customers[CustomerStatus] = "Active"
+            && Customers[RiskCategory] = "High Risk"
+    ),
+    Customers[MonthlyCharges] * 12
+)
+
+Revenue Lost by Churn Month =
+CALCULATE (
+    [Revenue Lost],
+    USERELATIONSHIP ( 'Date'[Date], Customers[ChurnDate] )
+)

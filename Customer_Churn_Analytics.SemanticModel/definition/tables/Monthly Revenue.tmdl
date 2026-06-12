@@ -1,0 +1,57 @@
+/// One row per customer-month containing recognized subscription revenue.
+table 'Monthly Revenue'
+	lineageTag: 2d72f610-ec06-49e3-8b37-aa2e4b5bcb65
+
+	/// Revenue recognized in the current date and customer filter context.
+	measure 'Total Revenue' = SUM('Monthly Revenue'[MonthlyRevenue])
+		formatString: $#,##0
+		displayFolder: Revenue KPIs
+		lineageTag: 106cf0dc-c599-4ddb-ae43-3a14b4b1395a
+
+	/// Average monthly revenue generated per distinct customer.
+	measure 'Average Monthly Revenue per Customer' = AVERAGEX(VALUES(Customers[CustomerID]), CALCULATE(AVERAGE('Monthly Revenue'[MonthlyRevenue])))
+		formatString: $#,##0.00
+		displayFolder: Revenue KPIs
+		lineageTag: 85a74ca1-96d9-46d0-8497-646e29993ce9
+
+	/// Simple customer lifetime value estimate based on average monthly revenue and tenure.
+	measure 'Customer Lifetime Value' = [Average Monthly Revenue per Customer] * [Average Customer Tenure]
+		formatString: $#,##0
+		displayFolder: Revenue KPIs
+		lineageTag: 0ff0679e-686b-4097-8d44-783eba0e6116
+
+	column MonthStart
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: 5ecde33e-e9f7-4f05-b1a7-065b63f46af1
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CustomerID
+		dataType: string
+		isHidden
+		lineageTag: e78bed41-dea0-4e80-ab01-230c9bdd5ea6
+		summarizeBy: none
+		sourceColumn: CustomerID
+
+	column MonthlyRevenue
+		dataType: decimal
+		formatString: $#,##0.00
+		lineageTag: accbeb0f-7105-45d7-998e-fff5b886b8d5
+		summarizeBy: sum
+		sourceColumn: MonthlyRevenue
+
+	partition 'Monthly Revenue' = m
+		mode: import
+		source =
+				let
+					Source = Csv.Document(File.Contents("D:\MY PORTFOLIO\PowerBI project\data\Monthly_Revenue.csv"), [Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.Csv]),
+					PromotedHeaders = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+					ChangedTypes = Table.TransformColumnTypes(PromotedHeaders, {{"MonthStart", type date}, {"CustomerID", type text}, {"MonthlyRevenue", Currency.Type}}),
+					RemovedInvalidRows = Table.SelectRows(ChangedTypes, each [MonthStart] <> null and [CustomerID] <> null and [CustomerID] <> "" and [MonthlyRevenue] >= 0),
+					RemovedDuplicates = Table.Distinct(RemovedInvalidRows, {"MonthStart", "CustomerID"})
+				in
+					RemovedDuplicates
+

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#17324D" flood-opacity="0.12"/>
+    </filter>
+    <style>
+      .title { font: 700 30px 'Segoe UI', Arial, sans-serif; fill: #FFFFFF; }
+      .subtitle { font: 400 15px 'Segoe UI', Arial, sans-serif; fill: #DCEAF4; }
+      .nav { font: 600 15px 'Segoe UI', Arial, sans-serif; fill: #47647C; }
+      .cardLabel { font: 600 15px 'Segoe UI', Arial, sans-serif; fill: #5C7083; }
+      .cardValue { font: 700 32px 'Segoe UI', Arial, sans-serif; fill: #17324D; }
+      .cardValueBad { font: 700 32px 'Segoe UI', Arial, sans-serif; fill: #D1495B; }
+      .chartTitle { font: 700 17px 'Segoe UI', Arial, sans-serif; fill: #17324D; }
+      .axis { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #738494; }
+      .label { font: 600 13px 'Segoe UI', Arial, sans-serif; fill: #47647C; }
+      .note { font: 400 14px 'Segoe UI', Arial, sans-serif; fill: #334155; }
+      .small { font: 400 12px 'Segoe UI', Arial, sans-serif; fill: #738494; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="900" fill="#F6F8FB"/>
+  <rect x="0" y="0" width="1600" height="92" fill="#17324D"/>
+  <text x="46" y="43" class="title">Customer Churn Analytics</text>
+  <text x="47" y="69" class="subtitle">Executive Summary | Data through December 31, 2025</text>
+  <rect x="1320" y="24" width="224" height="44" rx="8" fill="#2A6F97"/>
+  <text x="1364" y="52" class="subtitle" style="font-weight:600">Reset Filters</text>
+
+  <rect x="0" y="92" width="1600" height="54" fill="#FFFFFF"/>
+  <text x="48" y="126" class="nav" style="fill:#2A6F97">Executive Summary</text>
+  <text x="230" y="126" class="nav">Customer Analysis</text>
+  <text x="392" y="126" class="nav">Subscription Analysis</text>
+  <text x="585" y="126" class="nav">Churn Risk</text>
+  <text x="696" y="126" class="nav">Recommendations</text>
+  <line x1="46" y1="143" x2="185" y2="143" stroke="#2A6F97" stroke-width="4"/>
+
+  <g filter="url(#shadow)">
+    <rect x="46" y="172" width="278" height="116" rx="12" fill="#FFFFFF"/>
+    <rect x="348" y="172" width="278" height="116" rx="12" fill="#FFFFFF"/>
+    <rect x="650" y="172" width="278" height="116" rx="12" fill="#FFFFFF"/>
+    <rect x="952" y="172" width="278" height="116" rx="12" fill="#FFFFFF"/>
+    <rect x="1254" y="172" width="290" height="116" rx="12" fill="#FFFFFF"/>
+  </g>
+  <text x="70" y="207" class="cardLabel">TOTAL CUSTOMERS</text>
+  <text x="70" y="257" class="cardValue">1,500</text>
+  <text x="372" y="207" class="cardLabel">CHURN RATE</text>
+  <text x="372" y="257" class="cardValueBad">25.7%</text>
+  <text x="674" y="207" class="cardLabel">RETENTION RATE</text>
+  <text x="674" y="257" class="cardValue">74.3%</text>
+  <text x="976" y="207" class="cardLabel">ANNUAL REVENUE LOST</text>
+  <text x="976" y="257" class="cardValueBad">$339K</text>
+  <text x="1278" y="207" class="cardLabel">ANNUAL REVENUE AT RISK</text>
+  <text x="1278" y="257" class="cardValueBad">$105K</text>
+
+  <g filter="url(#shadow)">
+    <rect x="46" y="318" width="750" height="300" rx="12" fill="#FFFFFF"/>
+    <rect x="820" y="318" width="724" height="300" rx="12" fill="#FFFFFF"/>
+  </g>
+
+  <text x="72" y="354" class="chartTitle">Monthly Churn Trend</text>
+  <text x="72" y="376" class="small">Churned customers increased during the second half of 2025</text>
+  <line x1="90" y1="570" x2="760" y2="570" stroke="#DCE3E9"/>
+  <line x1="90" y1="430" x2="90" y2="570" stroke="#DCE3E9"/>
+  <line x1="90" y1="500" x2="760" y2="500" stroke="#E8EDF1" stroke-dasharray="5 5"/>
+  <line x1="90" y1="430" x2="760" y2="430" stroke="#E8EDF1" stroke-dasharray="5 5"/>
+  <polyline
+    points="100,548 155,540 210,526 265,536 320,518 375,505 430,513 485,480 540,486 595,454 650,424 705,442 750,442"
+    fill="none" stroke="#D1495B" stroke-width="5" stroke-linejoin="round" stroke-linecap="round"/>
+  <g fill="#D1495B">
+    <circle cx="100" cy="548" r="5"/><circle cx="155" cy="540" r="5"/>
+    <circle cx="210" cy="526" r="5"/><circle cx="265" cy="536" r="5"/>
+    <circle cx="320" cy="518" r="5"/><circle cx="375" cy="505" r="5"/>
+    <circle cx="430" cy="513" r="5"/><circle cx="485" cy="480" r="5"/>
+    <circle cx="540" cy="486" r="5"/><circle cx="595" cy="454" r="5"/>
+    <circle cx="650" cy="424" r="5"/><circle cx="705" cy="442" r="5"/>
+    <circle cx="750" cy="442" r="5"/>
+  </g>
+  <text x="86" y="592" class="axis">Dec 24</text>
+  <text x="287" y="592" class="axis">Apr 25</text>
+  <text x="497" y="592" class="axis">Aug 25</text>
+  <text x="702" y="592" class="axis">Dec 25</text>
+  <text x="60" y="574" class="axis">0</text>
+  <text x="53" y="504" class="axis">15</text>
+  <text x="53" y="434" class="axis">30</text>
+
+  <text x="846" y="354" class="chartTitle">Customer Status and Contract Risk</text>
+  <text x="846" y="376" class="small">Month-to-month customers show the highest churn rate</text>
+  <circle cx="1000" cy="485" r="87" fill="none" stroke="#3A8D7D" stroke-width="34"
+    stroke-dasharray="408 139" transform="rotate(-90 1000 485)"/>
+  <circle cx="1000" cy="485" r="87" fill="none" stroke="#D1495B" stroke-width="34"
+    stroke-dasharray="139 408" stroke-dashoffset="-408" transform="rotate(-90 1000 485)"/>
+  <text x="965" y="482" class="cardValue" style="font-size:25px">74.3%</text>
+  <text x="970" y="506" class="small">Active</text>
+  <rect x="1120" y="415" width="25" height="14" rx="3" fill="#3A8D7D"/>
+  <text x="1155" y="427" class="label">Active 1,115</text>
+  <rect x="1120" y="449" width="25" height="14" rx="3" fill="#D1495B"/>
+  <text x="1155" y="461" class="label">Churned 385</text>
+
+  <text x="1280" y="410" class="axis">Churn Rate</text>
+  <text x="1224" y="451" class="label">Month-to-Month</text>
+  <rect x="1348" y="435" width="152" height="22" rx="4" fill="#F3D9DE"/>
+  <rect x="1348" y="435" width="132" height="22" rx="4" fill="#D1495B"/>
+  <text x="1507" y="451" class="label">32.7%</text>
+  <text x="1252" y="502" class="label">One Year</text>
+  <rect x="1348" y="486" width="152" height="22" rx="4" fill="#DCEAF4"/>
+  <rect x="1348" y="486" width="76" height="22" rx="4" fill="#2A6F97"/>
+  <text x="1507" y="502" class="label">18.8%</text>
+  <text x="1254" y="553" class="label">Two Year</text>
+  <rect x="1348" y="537" width="152" height="22" rx="4" fill="#DCEAF4"/>
+  <rect x="1348" y="537" width="63" height="22" rx="4" fill="#3A8D7D"/>
+  <text x="1507" y="553" class="label">15.7%</text>
+
+  <g filter="url(#shadow)">
+    <rect x="46" y="648" width="1498" height="204" rx="12" fill="#FFFFFF"/>
+  </g>
+  <text x="72" y="684" class="chartTitle">Management Takeaways</text>
+  <rect x="72" y="710" width="438" height="112" rx="10" fill="#FCECEF"/>
+  <rect x="530" y="710" width="438" height="112" rx="10" fill="#EEF6FA"/>
+  <rect x="988" y="710" width="530" height="112" rx="10" fill="#EDF7F3"/>
+  <text x="94" y="744" class="label" style="fill:#B63E50">PROTECT REVENUE</text>
+  <text x="94" y="772" class="note">Prioritize 125 high-risk active customers</text>
+  <text x="94" y="796" class="small">Annual revenue exposure: approximately $105K</text>
+  <text x="552" y="744" class="label" style="fill:#2A6F97">REDUCE BILLING FRICTION</text>
+  <text x="552" y="772" class="note">Promote autopay and review electronic checks</text>
+  <text x="552" y="796" class="small">Non-autopay churn is 12.8 points higher</text>
+  <text x="1010" y="744" class="label" style="fill:#287563">STRENGTHEN EARLY RETENTION</text>
+  <text x="1010" y="772" class="note">Improve onboarding and first-year engagement</text>
+  <text x="1010" y="796" class="small">Use 30-, 60-, 90-, and 180-day customer checks</text>
+
+  <text x="1260" y="882" class="small">Synthetic portfolio dataset</text>
+</svg>

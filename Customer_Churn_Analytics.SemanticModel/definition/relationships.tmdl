@@ -1,0 +1,13 @@
+relationship 01fd5b87ad4c2aa8
+	fromColumn: 'Monthly Revenue'.CustomerID
+	toColumn: Customers.CustomerID
+
+relationship 6c8078133e467538
+	fromColumn: 'Monthly Revenue'.MonthStart
+	toColumn: Date.Date
+
+relationship 7798c1b78a2c4889
+	isActive: false
+	fromColumn: Customers.ChurnDate
+	toColumn: Date.Date
+

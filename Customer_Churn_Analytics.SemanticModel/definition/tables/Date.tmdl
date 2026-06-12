@@ -1,0 +1,94 @@
+/// Contiguous calendar used for monthly revenue and churn trend analysis.
+table Date
+	lineageTag: 3002c5f6-8bc8-456f-8b8c-9969e1892bc2
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: dec93f90-9dc2-4de0-9b7e-0e49552783b0
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: e3cb0c19-9ee7-4105-9bf6-cb63964cb77d
+		summarizeBy: none
+		sourceColumn: Year
+
+	column Quarter
+		dataType: string
+		lineageTag: 3b9edfd2-3e25-47c4-b5f9-d8ee1dd12e57
+		summarizeBy: none
+		sourceColumn: Quarter
+
+	column Month
+		dataType: string
+		lineageTag: 6e433e9d-4e3e-4b99-9d29-8b86c277b70e
+		summarizeBy: none
+		sourceColumn: Month
+		sortByColumn: 'Month No'
+
+	column 'Month No'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a44f262f-576f-45cd-a8a4-63024740862d
+		summarizeBy: none
+		sourceColumn: Month No
+
+	column 'Year Month'
+		dataType: string
+		lineageTag: 1d359e5d-ccb8-4c19-8953-696a8574ded6
+		summarizeBy: none
+		sourceColumn: Year Month
+		sortByColumn: 'Year Month Sort'
+
+	column 'Year Month Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f12870a0-90e6-4580-9640-794e84d25fc0
+		summarizeBy: none
+		sourceColumn: Year Month Sort
+
+	hierarchy 'Date Hierarchy'
+		lineageTag: 2888bf59-3103-430f-9c95-4a9bb41f8593
+
+		level Year
+			lineageTag: 935ad046-24a3-4391-9d41-18f544cdd284
+			column: Year
+
+		level Quarter
+			lineageTag: 0ecbf436-cfed-409d-a729-03802401f011
+			column: Quarter
+
+		level Month
+			lineageTag: c34d29d8-854f-4232-870b-18c9c22c5d03
+			column: Month
+
+		level Date
+			lineageTag: b1f25f77-3841-47f5-a8e8-81d141be3458
+			column: Date
+
+	partition Date = m
+		mode: import
+		source =
+				let
+					StartDate = #date(2022, 1, 1),
+					EndDate = #date(2025, 12, 31),
+					DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),
+					DateTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}),
+					AddedYear = Table.AddColumn(DateTable, "Year", each Date.Year([Date]), Int64.Type),
+					AddedQuarter = Table.AddColumn(AddedYear, "Quarter", each "Q" & Text.From(Date.QuarterOfYear([Date])), type text),
+					AddedMonth = Table.AddColumn(AddedQuarter, "Month", each Date.ToText([Date], "MMM"), type text),
+					AddedMonthNo = Table.AddColumn(AddedMonth, "Month No", each Date.Month([Date]), Int64.Type),
+					AddedYearMonth = Table.AddColumn(AddedMonthNo, "Year Month", each Date.ToText([Date], "yyyy-MMM"), type text),
+					AddedYearMonthSort = Table.AddColumn(AddedYearMonth, "Year Month Sort", each Date.Year([Date]) * 100 + Date.Month([Date]), Int64.Type),
+					ChangedType = Table.TransformColumnTypes(AddedYearMonthSort, {{"Date", type date}})
+				in
+					ChangedType
+

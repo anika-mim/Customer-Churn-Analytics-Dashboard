@@ -1,0 +1,22 @@
+{
+  "name": "Customer Churn Portfolio",
+  "dataColors": [
+    "#2A6F97",
+    "#D1495B",
+    "#3A8D7D",
+    "#E9A23B",
+    "#6C63A8",
+    "#7A8B99",
+    "#4D908E",
+    "#B56576"
+  ],
+  "background": "#F6F8FB",
+  "foreground": "#17324D",
+  "tableAccent": "#2A6F97",
+  "good": "#2E8B57",
+  "neutral": "#E9A23B",
+  "bad": "#D1495B",
+  "maximum": "#D1495B",
+  "center": "#F2D06B",
+  "minimum": "#3A8D7D"
+}

@@ -1,0 +1,27 @@
+Table,Field,DataType,BusinessMeaning,AnalyticalRole
+Customers,CustomerID,Text,Unique customer identifier,Key
+Customers,JoinDate,Date,Date the customer joined,Customer lifecycle
+Customers,ChurnDate,Date,Date service ended; blank for active customers,Churn analysis
+Customers,CustomerStatus,Text,Active or Churned,Primary outcome
+Customers,Age,Whole number,Customer age,Demographic
+Customers,AgeGroup,Text,Age band used for reporting,Derived segment
+Customers,Gender,Text,Customer gender category,Demographic
+Customers,Geography,Text,US region,Geographic segment
+Customers,TenureMonths,Whole number,Months from joining to churn or analysis date,Customer lifecycle
+Customers,IncomeLevel,Text,"Low, Middle, or High income band",Demographic segment
+Customers,ContractType,Text,"Month-to-Month, One Year, or Two Year",Subscription
+Customers,SubscriptionPlan,Text,"Basic, Standard, or Premium plan",Subscription
+Customers,MonthlyCharges,Currency,Current monthly recurring charge,Revenue
+Customers,PaymentMethod,Text,Customer payment method,Billing
+Customers,AutoPay,Text,Whether automatic payment is enabled,Billing
+Customers,SupportCalls,Whole number,Support calls in the recent observation period,Experience
+Customers,LatePayments,Whole number,Late payments in the recent observation period,Billing behavior
+Customers,SatisfactionScore,Whole number,Customer satisfaction score from 1 to 5,Experience
+Customers,TotalRevenue,Currency,Cumulative generated revenue through the analysis date,Revenue
+Customers,LastActivityDate,Date,Most recent known customer activity,Engagement
+Customers,RiskScore,Whole number,Simple rule-based churn risk score from 0 to 100,Derived risk
+Customers,RiskCategory,Text,"Low, Medium, High, or Churned",Derived risk
+Customers,ChurnReason,Text,Primary reason for churn; blank for active customers,Churn analysis
+Monthly Revenue,MonthStart,Date,First day of the revenue month,Date key
+Monthly Revenue,CustomerID,Text,Customer identifier linked to Customers,Foreign key
+Monthly Revenue,MonthlyRevenue,Currency,Revenue recognized for the customer and month,Revenue fact
