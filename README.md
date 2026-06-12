@@ -114,4 +114,7 @@ PowerBI project/
 |-- Customer_Churn_Analytics.SemanticModel/
 `-- PROJECT_BUILD_CHECKLIST.md
 
+## Overview
+<img width="1808" height="917" alt="PowerBi Project" src="https://github.com/user-attachments/assets/43b18702-be14-4256-89c1-4d69f9af31ec" />
+
 
